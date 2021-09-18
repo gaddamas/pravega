@@ -22,7 +22,7 @@ buildscript {
     println "Build JVM Version is : " + Jvm.current()
     repositories {
         maven {
-            url "https://asdrepo.isus.emc.com/artifactory/nautilus-prerelease-local}
+            url "https://asdrepo.isus.emc.com/artifactory/nautilus-prerelease-local"
         }
         maven {
             url "https://plugins.gradle.org/m2/"

@@ -22,9 +22,6 @@ buildscript {
     println "Build JVM Version is : " + Jvm.current()
     repositories {
         maven {
-            url "https://asdrepo.isus.emc.com/artifactory/nautilus-prerelease-local"
-        }
-        maven {
             url "https://plugins.gradle.org/m2/"
         }
     }
@@ -36,8 +33,6 @@ buildscript {
         classpath "gradle.plugin.com.github.spotbugs.snom:spotbugs-gradle-plugin:${spotbugsPluginVersion}"
         classpath "org.ajoberstar.grgit:grgit-gradle:${gradleGitPluginVersion}"
         classpath "io.franzbecker:gradle-lombok:${gradleLombokPluginVersion}"
-        classpath group: 'org.apache.bookkeeper', name: 'bookkeeper-common', version: bookKeeperVersion
-        classpath group: 'org.apache.bookkeeper', name: 'bookkeeper-server', version: bookKeeperVersion
     }
 }
 
@@ -95,6 +90,9 @@ allprojects {
     repositories {
         mavenCentral()
         mavenLocal()
+        maven {
+            url "https://asdrepo.isus.emc.com/artifactory/nautilus-prerelease-local"
+        }
     }
 
     version = getProjectVersion()
